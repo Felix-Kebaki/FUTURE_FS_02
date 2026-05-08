@@ -1,0 +1,58 @@
+.AuthFormMainDiv{
+    width:100%;
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.AuthFormMainDiv form{
+    padding:1.5rem;
+    background-color: grey;
+    border-radius: 0.3rem;
+}
+
+.AuthFormTitle{
+    font-size:1.5rem;
+}
+
+.AuthFormInputLabelDiv{
+    margin-top:0.3rem;
+}
+
+.AuthFormInputLabelDiv label{
+    font-size:0.7rem;
+}
+
+.AuthFormInputLabelDiv input{
+    width:20rem;
+    padding:0.4rem 0.2rem;
+    outline: none;
+    border:0.01rem black solid;
+    border-radius: 0.3rem;
+}
+
+.AuthFormInputLabelDiv{
+    width:100%;
+}
+
+.AuthFormBtnDiv{
+    width:100%;
+    margin-top:1rem;
+}
+
+.AuthFormBtnDiv button{
+    width:100%;
+    padding:0.4rem 0rem ;
+    cursor:pointer;
+    border:none;
+    border-radius: 0.3rem;
+}
+
+.AuthFormSwitchFormDiv{
+    margin-top:0.4rem;
+}
+
+.AuthFormSwitchFormDiv p a{
+    color:black;
+}
