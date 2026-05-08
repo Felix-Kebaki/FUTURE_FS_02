@@ -11,7 +11,7 @@ const registerAdmin = async (req, res) => {
 
     const adminExists = await Admin.findOne({ email });
     if (adminExists) {
-      return res.status().json({ error: "Admin already exists" });
+      return res.status(409).json({ error: "Admin already exists" });
     }
 
     const salt = await bcrypt.genSalt(12);
@@ -22,7 +22,10 @@ const registerAdmin = async (req, res) => {
       password: hashedPassword,
     });
 
-    await admin.save();
+    const registerAd = await admin.save();
+    if(!registerAd){
+        return res.status(500).json({error:"Unable to register admin"})
+    }
     generateToken(res,admin._id)
 
     res.status(201).json({

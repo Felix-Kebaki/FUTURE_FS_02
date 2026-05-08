@@ -1,13 +1,14 @@
 const jwt = require("jsonwebtoken");
+const Admin=require("../models/adminModel")
 
 const Protect = async (req, res, next) => {
-  const jwt = req.cookies.jwt;
+  const token = req.cookies.jwt;
   try {
-    if (!jwt) {
+    if (!token) {
       return res.status(401).json({ error: "Unauthorize access, No token" });
     }
 
-    const decoded = jwt.verify(jwt, process.env.JWT_SECRET);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
     if (!decoded) {
       return res
