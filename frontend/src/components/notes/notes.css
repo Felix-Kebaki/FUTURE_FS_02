@@ -1,0 +1,33 @@
+.OnlyNotesMainDiv{
+    width:30rem;
+    padding:1.5rem;
+    background-color: var(--bg);
+    border-radius: var(--b-radius);
+}
+
+.TopOfNotesDiv{
+    display:flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom:0.5rem;
+}
+
+.TopOfNotesDiv p{
+    color:var(--primary-color);
+    font-size:var(--font-lg);
+}
+
+#ExitNotesIcon{
+    font-size:1rem;
+    cursor: pointer;
+}
+
+.ActualNotesDiv p:first-child{
+    color:var(--secondary-color);
+    font-size:var(--font-sm);
+}
+
+.ActualNotesDiv p:last-child{
+    font-size: var(--font-md);
+    color:var(--primary-color);
+}

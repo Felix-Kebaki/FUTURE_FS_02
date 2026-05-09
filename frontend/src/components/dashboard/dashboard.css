@@ -1,0 +1,50 @@
+.DashboardMainDiv{
+    width:100%;
+    min-height: 100dvh;
+    padding:0.4rem;
+    background-color: var(--bg);
+}
+
+.DashboardMainTable{
+    width:97%;
+    margin:1.5rem auto 0rem;
+    border-radius: var(--b-radius);
+    border:none;
+    box-shadow: 0rem 0rem  0.15rem var(--primary-color);
+    background-color: var(--bg);
+    border-collapse: collapse;
+}
+
+.DashboardMainTable thead tr{
+    background-color: var(--secondary-color);
+    padding:0.5rem 0.2rem;
+    
+}
+
+.DashboardMainTable thead tr th{
+    text-align:start;
+        padding:0.5rem 0.2rem;
+        border:none;
+        font-size: var(--font-md);
+}
+
+.DashboardMainTable tbody{
+    border:none;
+}
+
+.DashboardMainTable tbody tr{
+    border:none;
+    cursor:pointer;
+    background-color: var(--bg);
+    padding:0.7rem 0.2rem;
+}
+
+.DashboardMainTable tbody tr:hover{
+    background-color: rgb(219, 218, 218);
+}
+
+.DashboardMainTable tbody tr td{
+    font-size:var(--font-btn);
+    border:none;
+    padding:0.4rem 0.2rem;
+}

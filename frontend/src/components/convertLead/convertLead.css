@@ -1,0 +1,87 @@
+.ConvertLeadMainDiv{
+    background-color: var(--bg);
+    padding:1.5rem;
+    border-radius: var(--b-radius);
+    width:30rem;
+}
+
+.NoteMainDivWrapper{
+    border-bottom:0.01rem var(--primary-color) solid;
+}
+
+.NoteMainTitle{
+    font-size:var(--font-lg);
+    padding-bottom: 0.4rem;
+}
+
+.NotesMainDiv{
+    margin-bottom:0.5rem;
+}
+
+.NotesMainDiv p:first-child{
+    color:var(--secondary-color);
+    font-size:var(--font-sm); 
+}
+
+.NotesMainDiv p:last-child{
+    color:var(--primary-color);
+    font-size:var(--font-md); 
+    margin-top:0.2rem;
+}
+
+.ConvertMainPrompt{
+    margin-top:0.5rem;
+}
+
+.PromptTwoBtnDiv{
+    display: flex;
+    justify-content: start;
+    column-gap:0.4rem;
+    margin-top:0.4rem;
+}
+
+.PromptTwoBtnDiv button{
+    padding:0.2rem 2rem;
+    border:none;
+    border-radius: var(--b-radius);
+    cursor:pointer;
+    font-size:var(--font-btn);
+}
+
+.PromptTwoBtnDiv button:first-child{
+    background-color: var(--secondary-color);
+    color:var(--bg);
+}
+
+.PromptTwoBtnDiv button:last-child{
+    background-color: var(--danger-color);
+    color:var(--primary-color);
+}
+
+.SelectOptionAtConvertDiv{
+    margin-top:0.4rem;
+    font-size:var(--font-md);
+}
+
+.InsideSelectOptionAtConvertDiv{
+    display:flex;
+    justify-content: start;
+    column-gap: 0.5rem;
+    margin-top:0.3rem;
+}
+
+.InsideSelectOptionAtConvertDiv div{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    column-gap: 0.1rem;
+    cursor: pointer;
+}
+
+.SelectOptionAtConvertDiv input{
+    font-size:0.2rem;
+}
+
+.SelectOptionAtConvertDiv label{
+    font-size:var(--font-sm);
+}

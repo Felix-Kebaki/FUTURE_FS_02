@@ -4,16 +4,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--primary-color);
 }
 
 .AuthFormMainDiv form{
     padding:1.5rem;
-    background-color: grey;
-    border-radius: 0.3rem;
+    background-color: var(--bg);
+    border-radius: var(--b-radius);
 }
 
 .AuthFormTitle{
-    font-size:1.5rem;
+    font-size:var(--font-lg);
 }
 
 .AuthFormInputLabelDiv{
@@ -21,15 +22,16 @@
 }
 
 .AuthFormInputLabelDiv label{
-    font-size:0.7rem;
+    font-size:var(--font-sm);
 }
 
 .AuthFormInputLabelDiv input{
     width:20rem;
     padding:0.4rem 0.2rem;
     outline: none;
-    border:0.01rem black solid;
-    border-radius: 0.3rem;
+    border:0.01rem var(--primary-color) solid;
+    border-radius: var(--b-radius);
+    background-color: transparent;
 }
 
 .AuthFormInputLabelDiv{
@@ -46,13 +48,19 @@
     padding:0.4rem 0rem ;
     cursor:pointer;
     border:none;
-    border-radius: 0.3rem;
+    border-radius: var(--b-radius);
+    background-color: var(--secondary-color);
+    font-size:var(--font-btn);
 }
 
 .AuthFormSwitchFormDiv{
     margin-top:0.4rem;
 }
 
+.AuthFormSwitchFormDiv p {
+    font-size:var(--font-sm);
+}
+
 .AuthFormSwitchFormDiv p a{
-    color:black;
+    color:var(--primary-color);
 }

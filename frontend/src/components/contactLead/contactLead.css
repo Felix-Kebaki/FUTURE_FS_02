@@ -1,0 +1,37 @@
+.ContactLeadMainDiv{
+    width:30rem;
+    background-color: var(--bg);
+    padding:1.5rem;
+    border-radius: var(--b-radius);
+}
+
+.ContactMainQuizDiv p{
+    font-size:var(--font-md);
+    color:var(--primary-color);
+}
+
+.CreateNoteMainForm div label{
+    font-size:var(--font-sm);
+    color:var(--primary-color);
+}
+
+.CreateNoteMainForm div textarea{
+    width:100%;
+    min-height: 4rem;
+    max-height: 4rem;
+    padding:0.4rem 0.2rem;
+    border-radius: var(--b-radius);
+    outline: none;
+    border:0.01rem var(--primary-color) solid;
+    background-color: transparent;
+}
+
+.CreateNoteMainForm div input{
+    width:100%;
+    padding:0.4rem 0.2rem;
+    border-radius: var(--b-radius);
+    outline: none;
+    border:0.01rem var(--primary-color) solid;
+    background-color: transparent;
+    font-size:var(--font-sm);
+}

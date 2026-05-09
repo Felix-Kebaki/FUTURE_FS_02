@@ -1,5 +1,39 @@
+:root{
+  --bg:#f9f3ec;
+
+  --primary-color:#0a0a0a;
+  --secondary-color:rgba(0, 0, 255, 0.685);
+  --danger-color:orangered;
+  --success-color:rgba(0, 128, 0, 0.788);
+
+  --font-sm:0.7rem;
+  --font-md:0.9rem;
+  --font-lg:1.5rem;
+  --font-btn:0.8rem;
+
+  --font:"Jersey 10", sans-serif;
+
+  --b-radius:0.3rem;
+}
+
 *{
     padding:0;
     margin:0;
     box-sizing: border-box;
+    font-family: var(--font);
+    color:var(--primary-color);
+}
+
+.OverflowAddMainDiv{
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.658);
+  overflow: hidden; 
+  display: flex;
+  justify-content: center;
+   align-items: center;
+  z-index: 999999;
 }

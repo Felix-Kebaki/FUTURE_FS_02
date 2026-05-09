@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./authform.css";
 import API from "../../utils/axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export function AuthForm({ page, switchPage, title }) {
   const [formData, setFormData] = useState({
@@ -83,7 +83,7 @@ export function AuthForm({ page, switchPage, title }) {
         <div className="AuthFormSwitchFormDiv">
           <p>
             {switchPage}{" "}
-            <a href="">{title === "Admin Login" ? "register" : "login"}</a>
+            <Link to={title === "Admin Login" ? "/register":"/login"}>{title === "Admin Login" ? "register" : "login"}</Link>
           </p>
         </div>
       </form>
