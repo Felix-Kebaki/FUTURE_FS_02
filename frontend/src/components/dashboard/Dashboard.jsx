@@ -14,10 +14,10 @@ export function Dashboard() {
   const [loading, setLoading] = useState(false);
   const [toContacted, setToContacted] = useState(null);
   const [toConverted, setToConverted] = useState(null);
-  const [showNotes,setShowNotes]=useState(false)
+  const [showNotes, setShowNotes] = useState(false);
   const [notes, setNotes] = useState(null);
 
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   const getLeads = async () => {
     try {
@@ -36,24 +36,24 @@ export function Dashboard() {
     } else if (getStatus === "contacted") {
       setToConverted(getId);
       setNotes(getNotes);
-    }else if(getStatus==="converted"){
-      setNotes(getNotes)
-      setShowNotes(true)
+    } else if (getStatus === "converted") {
+      setNotes(getNotes);
+      setShowNotes(true);
     }
   };
 
-  const HandleLogout=async()=>{
+  const HandleLogout = async () => {
     try {
-      const res=await API.post("/admin/logoutAdmin")
-      if(res.error){
-        console.error(res.error.data.error || res.error.error)
+      const res = await API.post("/admin/logoutAdmin");
+      if (res.error) {
+        console.error(res.error.data.error || res.error.error);
       }
-      console.log(res.data.message)
-      navigate("/login")
+      console.log(res.data.message);
+      navigate("/login");
     } catch (error) {
-      console.error(error.message || error)
+      console.error(error.message || error);
     }
-  }
+  };
 
   useEffect(() => {
     getLeads();
@@ -61,7 +61,7 @@ export function Dashboard() {
 
   if (loading) {
     return (
-      <div>
+      <div className="LoadingMainDiv">
         <p>Loading...</p>
       </div>
     );
@@ -72,43 +72,49 @@ export function Dashboard() {
       <div className="LogoutMainDiv">
         <button onClick={HandleLogout}>Logout</button>
       </div>
-      <table className="DashboardMainTable">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Source</th>
-            <th>Status</th>
-            <th>Notes</th>
-            <th>Follow-up</th>
-            <th>Created On</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data !== null
-            ? data.map((lead) => (
-                <tr
-                  key={lead._id}
-                  onClick={() =>
-                    HandleClickLead(lead._id, lead.status, lead.notes)
-                  }
-                >
-                  <td>{lead.name}</td>
-                  <td>{lead.email}</td>
-                  <td>{lead.source}</td>
-                  <td>{lead.status}</td>
-                  <td>{lead.notes.length !== 0 ? `Available(${lead.notes.length})` : null}</td>
-                  <td>
-                    {lead.followUpDate && lead.status !== "converted"
-                      ? moment(lead.followUpDate).format("YYYY-MM-DD")
-                      : null}
-                  </td>
-                  <td>{moment(lead.createdAt).format("YYYY-MM-DD")}</td>
-                </tr>
-              ))
-            : null}
-        </tbody>
-      </table>
+      <div className="DashboardTableWrapper">
+        <table className="DashboardMainTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Source</th>
+              <th>Status</th>
+              <th>Notes</th>
+              <th>Follow-up</th>
+              <th>Created On</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data !== null
+              ? data.map((lead) => (
+                  <tr
+                    key={lead._id}
+                    onClick={() =>
+                      HandleClickLead(lead._id, lead.status, lead.notes)
+                    }
+                  >
+                    <td>{lead.name}</td>
+                    <td>{lead.email}</td>
+                    <td>{lead.source}</td>
+                    <td>{lead.status}</td>
+                    <td>
+                      {lead.notes.length !== 0
+                        ? `Available(${lead.notes.length})`
+                        : null}
+                    </td>
+                    <td>
+                      {lead.followUpDate && lead.status !== "converted"
+                        ? moment(lead.followUpDate).format("YYYY-MM-DD")
+                        : null}
+                    </td>
+                    <td>{moment(lead.createdAt).format("YYYY-MM-DD")}</td>
+                  </tr>
+                ))
+              : null}
+          </tbody>
+        </table>
+      </div>
 
       {toContacted !== null ? (
         <div className="OverflowAddMainDiv">
@@ -127,9 +133,15 @@ export function Dashboard() {
         </div>
       ) : null}
 
-      {showNotes ?<div className="OverflowAddMainDiv">
-        <Notes notes={notes} setNotes={setNotes} setShowNotes={setShowNotes}/>
-      </div>:null}
+      {showNotes ? (
+        <div className="OverflowAddMainDiv">
+          <Notes
+            notes={notes}
+            setNotes={setNotes}
+            setShowNotes={setShowNotes}
+          />
+        </div>
+      ) : null}
     </div>
   );
 }

@@ -28,7 +28,7 @@ export function ProtectRoutes({ children }) {
 
   if (loading) {
     return (
-      <div>
+      <div className="LoadingMainDiv">
         <p>Loading...</p>
       </div>
     );

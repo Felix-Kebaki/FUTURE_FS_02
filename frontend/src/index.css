@@ -37,3 +37,15 @@
    align-items: center;
   z-index: 999999;
 }
+
+.LoadingMainDiv{
+  width:100%;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.LoadingMainDiv p{
+  font-size:var(--font-md);
+}

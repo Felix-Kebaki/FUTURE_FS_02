@@ -21,8 +21,14 @@
     border:none;
 }
 
-.DashboardMainTable{
+.DashboardTableWrapper{
     width:97%;
+    margin:0rem auto 0rem;
+    overflow-x:auto;
+}
+
+.DashboardMainTable{
+    width:100%;
     margin:1.5rem auto 0rem;
     border-radius: var(--b-radius);
     border:none;
@@ -63,4 +69,17 @@
     font-size:var(--font-btn);
     border:none;
     padding:0.4rem 0.2rem;
+}
+
+@media screen and (max-width:1040px){
+.DashboardMainTable{
+    margin:0.9rem auto 0rem;
+    width:62rem
+}}
+
+@media screen and (max-width:817px){
+    .LogoutMainDiv button{
+    padding:0.2rem 1.5rem;
+}
+
 }

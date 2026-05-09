@@ -85,3 +85,18 @@
 .SelectOptionAtConvertDiv label{
     font-size:var(--font-sm);
 }
+
+@media screen and (max-width:504px){
+.ConvertLeadMainDiv{
+    padding:1rem;
+    width:100%;
+}
+}
+
+@media screen and (max-width:364px){
+.PromptTwoBtnDiv button{
+    padding:0.2rem 1.5rem;
+    font-size:var(--font-btn);
+}
+
+}

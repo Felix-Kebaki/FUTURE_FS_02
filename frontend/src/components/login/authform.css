@@ -11,6 +11,7 @@
     padding:1.5rem;
     background-color: var(--bg);
     border-radius: var(--b-radius);
+    width:20rem;
 }
 
 .AuthFormTitle{
@@ -26,7 +27,7 @@
 }
 
 .AuthFormInputLabelDiv input{
-    width:20rem;
+    width:100%;
     padding:0.4rem 0.2rem;
     outline: none;
     border:0.01rem var(--primary-color) solid;
@@ -63,4 +64,11 @@
 
 .AuthFormSwitchFormDiv p a{
     color:var(--primary-color);
+}
+
+@media screen and (max-width:333px){
+.AuthFormMainDiv form{
+    padding:1rem;
+    width:97%;
+}
 }
