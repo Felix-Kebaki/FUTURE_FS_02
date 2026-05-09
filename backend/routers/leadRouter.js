@@ -6,7 +6,7 @@ const {
   deleteLead,
   customerAcquired,
   contactLead,
-  takeNotesAndFollowups,
+  takeNotesAndFollowups
 } = require("../controllers/leadController");
 const router = express.Router();
 
