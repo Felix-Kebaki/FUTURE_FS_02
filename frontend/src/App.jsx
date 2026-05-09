@@ -1,7 +1,6 @@
 import { ProtectRoutes } from "./components/protectRoutes/ProtectRoutes";
 import { DashboardPage } from "./pages/DashboardPage";
 import { LoginAdminPage } from "./pages/LoginAdminPage";
-import { RegisterAdminPage } from "./pages/RegisterAdminPage";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -19,7 +18,6 @@ function App() {
             }
           />
           <Route path="/login" element={<LoginAdminPage />} />
-          <Route path="/register" element={<RegisterAdminPage />} />
         </Routes>
       </Router>
     </>

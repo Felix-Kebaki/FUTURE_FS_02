@@ -3,7 +3,7 @@ import "./authform.css";
 import API from "../../utils/axios";
 import { Link, useNavigate } from "react-router-dom";
 
-export function AuthForm({ page, switchPage, title }) {
+export function AuthForm() {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -23,29 +23,16 @@ export function AuthForm({ page, switchPage, title }) {
     e.preventDefault();
 
     try {
-      if (title === "Admin Login") {
-        const res = await API.post("/admin/loginAdmin", formData);
-        if (res.error) {
-          console.error(res.error.data.error || res.error.error);
-        }
-        console.log(res.data.message);
-        setFormData({
-          email: "",
-          password: "",
-        });
-        navigate("/", { replace: true });
-      } else {
-        const res = await API.post("/admin/registerAdmin", formData);
-        if (res.error) {
-          console.error(res.error.data.error || res.error.error);
-        }
-        console.log(res.data.message);
-        setFormData({
-          email: "",
-          password: "",
-        });
-        navigate("/", { replace: true });
+      const res = await API.post("/admin/loginAdmin", formData);
+      if (res.error) {
+        console.error(res.error.data.error || res.error.error);
       }
+      console.log(res.data.message);
+      setFormData({
+        email: "",
+        password: "",
+      });
+      navigate("/", { replace: true });
     } catch (error) {
       console.error(error.message || error);
     }
@@ -54,7 +41,7 @@ export function AuthForm({ page, switchPage, title }) {
   return (
     <div className="AuthFormMainDiv">
       <form onSubmit={HandleSubmit}>
-        <p className="AuthFormTitle">{title}</p>
+        <p className="AuthFormTitle">Admin Login</p>
         <div className="AuthFormInputLabelDiv">
           <label htmlFor="emailId">Email</label>
           <br />
@@ -78,13 +65,7 @@ export function AuthForm({ page, switchPage, title }) {
           />
         </div>
         <div className="AuthFormBtnDiv">
-          <button type="submit">{page}</button>
-        </div>
-        <div className="AuthFormSwitchFormDiv">
-          <p>
-            {switchPage}{" "}
-            <Link to={title === "Admin Login" ? "/register":"/login"}>{title === "Admin Login" ? "register" : "login"}</Link>
-          </p>
+          <button type="submit">Login</button>
         </div>
       </form>
     </div>

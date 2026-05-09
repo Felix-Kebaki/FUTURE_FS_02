@@ -1,13 +1,9 @@
-import { AuthForm } from "../components/authForm/AuthForm";
+import { AuthForm } from "../components/login/AuthForm";
 
 export function LoginAdminPage() {
   return (
     <>
-      <AuthForm
-        page="Login"
-        switchPage="Don't have an account? "
-        title="Admin Login"
-      />
+      <AuthForm />
     </>
   );
 }
