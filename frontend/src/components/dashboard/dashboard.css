@@ -5,6 +5,22 @@
     background-color: var(--bg);
 }
 
+.LogoutMainDiv{
+    display: flex;
+    justify-content: end;
+    width:97%;
+    margin:0rem auto 0rem;
+}
+
+.LogoutMainDiv button{
+    background-color: var(--danger-color);
+    color:var(--primary-color);
+    border-radius: var(--b-radius);
+    padding:0.4rem 2rem;
+    cursor: pointer;
+    border:none;
+}
+
 .DashboardMainTable{
     width:97%;
     margin:1.5rem auto 0rem;

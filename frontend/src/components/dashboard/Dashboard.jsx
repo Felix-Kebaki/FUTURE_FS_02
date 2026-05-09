@@ -7,6 +7,7 @@ import "./dashboard.css";
 import { ContactLead } from "../contactLead/ContactLead";
 import { ConvertLead } from "../convertLead/ConvertLead";
 import { Notes } from "../notes/Notes";
+import { useNavigate } from "react-router-dom";
 
 export function Dashboard() {
   const [data, setData] = useState(null);
@@ -15,6 +16,8 @@ export function Dashboard() {
   const [toConverted, setToConverted] = useState(null);
   const [showNotes,setShowNotes]=useState(false)
   const [notes, setNotes] = useState(null);
+
+  const navigate=useNavigate()
 
   const getLeads = async () => {
     try {
@@ -39,6 +42,19 @@ export function Dashboard() {
     }
   };
 
+  const HandleLogout=async()=>{
+    try {
+      const res=await API.post("/admin/logoutAdmin")
+      if(res.error){
+        console.error(res.error.data.error || res.error.error)
+      }
+      console.log(res.data.message)
+      navigate("/login")
+    } catch (error) {
+      console.error(error.message || error)
+    }
+  }
+
   useEffect(() => {
     getLeads();
   }, [toContacted, toConverted]);
@@ -53,6 +69,9 @@ export function Dashboard() {
 
   return (
     <div className="DashboardMainDiv">
+      <div className="LogoutMainDiv">
+        <button onClick={HandleLogout}>Logout</button>
+      </div>
       <table className="DashboardMainTable">
         <thead>
           <tr>
