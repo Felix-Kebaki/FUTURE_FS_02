@@ -2,8 +2,10 @@ import { useState } from "react";
 import "./authform.css";
 import API from "../../utils/axios";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export function AuthForm() {
+  const [errorMessage, setErrorMessage] = useState("");
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -24,18 +26,20 @@ export function AuthForm() {
 
     try {
       const res = await API.post("/admin/loginAdmin", formData);
-      if (res.error) {
-        console.error(res.error.data.error || res.error.error);
-      }
+
       console.log(res.data.message);
       setFormData({
         email: "",
         password: "",
       });
-      navigate("/", { replace: true });
+      navigate("/dashboard", { replace: true });
     } catch (error) {
-      console.error(error.message || error);
+      setErrorMessage(error.response.data.error || error.message || error);
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 3000);
     }
+    console.error(error.response.data.error || error.message || error);
   };
 
   return (
@@ -67,6 +71,7 @@ export function AuthForm() {
         <div className="AuthFormBtnDiv">
           <button type="submit">Login</button>
         </div>
+        {errorMessage !== "" ? <pre>{errorMessage}</pre> : null}
       </form>
     </div>
   );

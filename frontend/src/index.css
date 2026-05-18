@@ -49,3 +49,9 @@
 .LoadingMainDiv p{
   font-size:var(--font-md);
 }
+
+pre{
+  font-size:var(--font-md);
+  margin-top:0.8rem;
+  text-align: center;
+}

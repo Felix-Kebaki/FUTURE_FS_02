@@ -4,6 +4,7 @@ import { useState } from "react";
 import API from "../../utils/axios";
 
 export function ContactLead({ id, setId }) {
+  const [errorMessage, setErrorMessage] = useState("");
   const [contacting, setContacting] = useState(false);
   const [formData, setFormData] = useState({
     text: "",
@@ -34,14 +35,15 @@ export function ContactLead({ id, setId }) {
         console.error(res1.error.data.error || res1.error.error);
       } else {
         const res2 = await API.post(`/lead/saveNotes/${id}`, formData);
-        if (res2.error) {
-          console.error(res2.error.data.error || res2.error.error);
-        }
         console.log(res2.data.message);
         setId(null);
       }
     } catch (error) {
-      console.error(error.message || error);
+      console.error(error.response.data.error || error.message || error);
+      setErrorMessage(error.response.data.error || error.message || error);
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 3000);
     }
   };
 
@@ -84,6 +86,7 @@ export function ContactLead({ id, setId }) {
               Cancel
             </button>
           </div>
+          {errorMessage !== "" ? <pre>{errorMessage}</pre> : null}
         </form>
       )}
     </div>

@@ -1,6 +1,7 @@
 import { ProtectRoutes } from "./components/protectRoutes/ProtectRoutes";
 import { DashboardPage } from "./pages/DashboardPage";
 import { LoginAdminPage } from "./pages/LoginAdminPage";
+import { WebsiteFormPage } from "./pages/WebsiteFormPage";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -10,7 +11,7 @@ function App() {
       <Router>
         <Routes>
           <Route
-            path="/"
+            path="/dashboard"
             element={
               <ProtectRoutes>
                 <DashboardPage />
@@ -18,6 +19,7 @@ function App() {
             }
           />
           <Route path="/login" element={<LoginAdminPage />} />
+          <Route path='/' element={<WebsiteFormPage/>}/>
         </Routes>
       </Router>
     </>

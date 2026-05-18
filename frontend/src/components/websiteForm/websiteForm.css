@@ -1,0 +1,55 @@
+.WebsiteFormMainDiv {
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-color);
+}
+
+.WebsiteFormMainDiv form{
+        padding:1.5rem;
+    background-color: var(--bg);
+    border-radius: var(--b-radius);
+    width:30rem;
+}
+
+.WebsiteFormTitle{
+    font-size:var(--font-lg);
+}
+
+.WebsiteFormDesc{
+    font-size:var(--font-md);
+}
+
+.FormInputAndLabelDiv{
+    margin-top:0.3rem;
+}
+
+.FormInputAndLabelDiv label{
+      font-size:var(--font-sm);
+}
+
+.FormInputAndLabelDiv input{
+    width:100%;
+    padding:0.4rem 0.2rem;
+    outline: none;
+    border:0.01rem var(--primary-color) solid;
+    border-radius: var(--b-radius);
+    background-color: transparent;
+}
+
+.WebsiteFormBtnDiv{
+    width:100%;
+    margin-top:1rem;
+}
+
+.WebsiteFormBtnDiv button{
+    width:100%;
+    padding:0.4rem 0rem ;
+    cursor:pointer;
+    border:none;
+    border-radius: var(--b-radius);
+    background-color: var(--secondary-color);
+    font-size:var(--font-btn);
+}

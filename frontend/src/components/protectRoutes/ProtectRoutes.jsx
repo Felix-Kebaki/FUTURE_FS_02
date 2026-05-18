@@ -34,5 +34,5 @@ export function ProtectRoutes({ children }) {
     );
   }
 
-  return me !== null ? children : <Navigate to="/login" />;
+  return me !== null ? children : <Navigate to="/dashboard" />;
 }
